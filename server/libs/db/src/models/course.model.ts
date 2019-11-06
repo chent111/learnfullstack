@@ -16,7 +16,6 @@ export class Course {
     @prop()
     cover: string
 
-    @ApiModelProperty({description: '课时'})
     @arrayProp({itemsRef: 'Episode'})
     episodes: Ref<Episode>[] 
 }
