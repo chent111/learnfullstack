@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Main from '../views/Main.vue'
-import CourseList from '../views/courses/CourseList.vue'
-import CourseEdit from '../views/courses/CourseEdit.vue'
+import ResourceCrud from '../views/ResourceCrud.vue'
+// import CourseList from '../views/courses/CourseList.vue'
+// import CourseEdit from '../views/courses/CourseEdit.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +14,10 @@ const routes: RouteConfig[] = [
     component: Main,
     children: [
       {name: 'home', path: '/', component: Home},
-      {name: 'course-list', path: '/courses/list', component: CourseList},
-      {name: 'course-create', path: '/courses/create', component: CourseEdit},
-      {name: 'course-edit', path: '/courses/edit/:id', component: CourseEdit, props: true},
+      {name: 'resource-crud', path: '/:resource/list', component: ResourceCrud, props: true},
+      // {name: 'course-list', path: '/courses/list', component: CourseList},
+      // {name: 'course-create', path: '/courses/create', component: CourseEdit},
+      // {name: 'course-edit', path: '/courses/edit/:id', component: CourseEdit, props: true},
     ]
   },
 ]
